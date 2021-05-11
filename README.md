@@ -1,3 +1,15 @@
+# 끝장 개발 대회 - 환경 해커톤(environment hackathon)
+## 매실나무 : 매실 실천하는 나의 무탄소 생활
+* 탄소 중립 실현을 위한 게임형 실천 유도 어플리케이션 개발
+* develop carbon-free-behavior inducing software
+
+## team member
+* 김민지 : Designer
+* 김선호 : App developer
+* 김용우 : App developer
+* 김은솔 : App developer, Back-End developer, Designer
+* 김재훈 : Manager, Back-End developer
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
 </p>

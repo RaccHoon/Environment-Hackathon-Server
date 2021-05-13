@@ -17,7 +17,7 @@ export class UserService {
 	}
 
 	async signUp(userInformation: User): Promise<void> {
-		userInformation.password = await this.encrypSer.makeSault();
+		userInformation.password = await this.encrypSer.makeSault(userInformation.password);
 		await this.userRepository.insert(userInformation);
 	}
 }

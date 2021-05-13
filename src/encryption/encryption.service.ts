@@ -3,9 +3,8 @@ import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class EncryptionService {
-	async makeSault() {
-		const saltOrRounds = await bcrypt.genSalt();;
-		const password = 'random_password';
+	async makeSault(password: string) {
+		const saltOrRounds = await bcrypt.genSalt();
 		const hash = await bcrypt.hash(password, saltOrRounds);
 		return hash
 	}

@@ -7,8 +7,8 @@
 * 김민지 : Designer
 * 김선호 : App developer
 * 김용우 : App developer
-* 김은솔 : App developer, Back-End developer, Designer
-* 김재훈 : Manager, Back-End developer
+* 김은솔 : PM, App developer, Back-End developer, Designer
+* 김재훈 : Back-End developer
 
 
 ## NestJs

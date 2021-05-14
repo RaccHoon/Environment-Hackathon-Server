@@ -1,4 +1,4 @@
-import { Controller, Request, Post, UseGuards, Get } from '@nestjs/common';
+import { Controller, Request, Post, UseGuards, Get, Delete } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { AppService } from './app.service';
 import { LocalAuthGuard } from './auth/local-auth.guard';
@@ -27,5 +27,10 @@ export class AppController {
   @Get('profile')
   async getProfile(@Request() req) {
     return req.user
+  }
+
+  @Delete('delete/all')
+  async deleteAll(): Promise<void> {
+    await this.appService.deleteAll()
   }
 }

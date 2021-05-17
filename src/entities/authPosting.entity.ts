@@ -5,27 +5,27 @@ export class AuthPosting {
     @PrimaryGeneratedColumn('uuid')
     questName: string;
 
-    @Column()
+    @Column({default: ""})
     postTitle: string;
 
     @Column({type: "longtext"})
     postContent: string;
 
-    @Column()
+    @Column({default: ""})
     picture: string;
 
-	@CreateDateColumn()
-    data: string;
+	@CreateDateColumn({type: "timestamp"})
+    date: string;
 
 	@Column()
     writerCode: string;
 
-	@Column()
+	@Column({default: 0})
     authNum: number;
 
-	@Column()
+	@Column({default: 0})
     pictureNum: number;
 	
-	@Column()
+	@Column({default: 0})
     reviewNum: number;
 }

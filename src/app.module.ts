@@ -18,7 +18,7 @@ import "reflect-metadata";
     TypeOrmModule.forFeature([User]),
     AuthPostingModule
   ],
-  controllers: [AppController, AuthPostingController],
-  providers: [AppService, AuthPostingService],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}

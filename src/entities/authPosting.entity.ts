@@ -28,4 +28,7 @@ export class AuthPosting {
 	
 	@Column({default: 0})
     reviewNum: number;
+
+    @Column({default: 'unAuth'})
+    type: string;
 }

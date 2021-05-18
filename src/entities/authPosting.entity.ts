@@ -20,6 +20,9 @@ export class AuthPosting {
 	@Column()
     writerCode: string;
 
+    @Column()
+    writerName: string;
+
 	@Column({default: 0})
     authNum: number;
 

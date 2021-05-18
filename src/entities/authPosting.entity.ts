@@ -3,7 +3,7 @@ import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn } from 'typeor
 @Entity()
 export class AuthPosting {
     @PrimaryGeneratedColumn('uuid')
-    id: string;
+    postingId: string;
 
     @Column()
     questName: string;

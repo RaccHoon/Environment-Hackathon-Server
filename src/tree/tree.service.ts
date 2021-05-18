@@ -21,4 +21,8 @@ export class TreeService {
 			await this.treeRepository.insert(treeInfo)
 		}
 	}
+
+	async userBreedingTree(user) {
+		
+	}
 }

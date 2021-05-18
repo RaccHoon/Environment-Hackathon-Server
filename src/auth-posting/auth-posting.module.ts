@@ -6,11 +6,13 @@ import { AuthPostingService } from './auth-posting.service'
 import { UserService } from '../user/user.service'
 import { User } from '../entities/user.entity'
 import { EncryptionService } from '../encryption/encryption.service'
+import { Tree } from '../entities/trees.entity'
+import { TreeService } from '../tree/tree.service'
 
 @Module({
-	imports: [TypeOrmModule.forFeature([AuthPosting, User])],
+	imports: [TypeOrmModule.forFeature([AuthPosting, User, Tree])],
     controllers: [AuthPostingController],
-    providers: [AuthPostingService, UserService, EncryptionService],
+    providers: [AuthPostingService, UserService, EncryptionService, TreeService],
     exports: [AuthPostingService]
 })
 export class AuthPostingModule {}

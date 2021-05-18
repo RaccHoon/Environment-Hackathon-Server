@@ -8,6 +8,7 @@ import { User } from './entities/user.entity'
 import { AuthPostingController } from './auth-posting/auth-posting.controller';
 import { AuthPostingService } from './auth-posting/auth-posting.service';
 import { AuthPostingModule } from './auth-posting/auth-posting.module';
+import { TreeModule } from './tree/tree.module';
 import "reflect-metadata";
 
 @Module({
@@ -16,7 +17,8 @@ import "reflect-metadata";
     TypeOrmModule.forRoot(),
     AuthModule,
     TypeOrmModule.forFeature([User]),
-    AuthPostingModule
+    AuthPostingModule,
+    TreeModule
   ],
   controllers: [AppController],
   providers: [AppService],

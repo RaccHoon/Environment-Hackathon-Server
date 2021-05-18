@@ -1,18 +1,18 @@
-export const trees = {
-	tree1: {
+export const trees = [
+	{
 		name: "SpringTree",
 		code: "Tree1"
 	},
-	tree2: {
+	{
 		name: "SummerTree",
-		code: "Tree1"
+		code: "Tree2"
 	},
-	tree3: {
+	{
 		name: "AutumnTree",
-		code: "Tree1"
+		code: "Tree3"
 	},
-	tree4: {
+	{
 		name: "WinterTree",
-		code: "Tree1"
+		code: "Tree4"
 	}
-}
+]

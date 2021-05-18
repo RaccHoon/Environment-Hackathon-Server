@@ -6,9 +6,10 @@ import { UserService } from './user.service';
 import { EncryptionService } from '../encryption/encryption.service'
 import { Tree } from '../entities/trees.entity'
 import { TreeService } from '../tree/tree.service'
+import { BreedingInfo } from '../entities/breedingInfo.entity'
 
 @Module({
-	imports: [TypeOrmModule.forFeature([User, Tree])],
+	imports: [TypeOrmModule.forFeature([User, Tree, BreedingInfo])],
     controllers: [UserController],
     providers: [UserService, EncryptionService, TreeService],
     exports: [UserService, EncryptionService]

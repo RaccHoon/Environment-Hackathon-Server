@@ -1,7 +1,7 @@
 import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn } from 'typeorm';
 
 @Entity()
-export class AuthPosting {
+export class BreedingInfo {
     @PrimaryGeneratedColumn('uuid')
     breadId: string;
 

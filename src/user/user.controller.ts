@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
 import { UserService } from './user.service';
 import { User } from '../entities/user.entity';
 import { get } from 'http';
@@ -14,8 +14,15 @@ export class UserController {
 		this.userService.signUp(userInformation);
 	}
 
+	@Delete('/deleteAll')
+	async deleteAll(): Promise<void> {
+		this.userService.deleteAll()
+	}
+
 	@Get('/:email')
 	async noSameEmail(@Param('email') email: string): Promise<string> {
 		return this.userService.noSameEmail(email)
 	}
+
+
 }

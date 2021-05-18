@@ -1,4 +1,4 @@
-import { Body, Controller, Post, UseGuards, Request, Get, Query, Param } from '@nestjs/common';
+import { Body, Controller, Post, UseGuards, Request, Get, Query, Param, Delete } from '@nestjs/common';
 import { AuthPostingService } from './auth-posting.service';
 import { AuthPosting } from '../entities/authPosting.entity'
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
@@ -26,4 +26,8 @@ export class AuthPostingController {
 		return postingInfo;
 	}
 
+	@Delete('deleteAll')
+	async deleteAll() {
+		await this.a_pService.deleteAll();
+	}
 }

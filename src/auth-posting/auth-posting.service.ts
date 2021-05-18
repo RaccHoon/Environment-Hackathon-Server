@@ -43,4 +43,8 @@ export class AuthPostingService {
 			return null;
 		}
 	}
+
+	async deleteAll() {
+		await this.postingRepository.delete({});
+	}
 }

@@ -13,7 +13,4 @@ export class Tree {
 
     @Column()
     userCode: string;
-
-	@Column({default: 0})
-    level: number;
 }

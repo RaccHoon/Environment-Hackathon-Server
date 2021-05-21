@@ -1,4 +1,4 @@
-import { Body, Controller, Post, UseGuards, Request, Get, Query, Param, Delete } from '@nestjs/common';
+import { Body, Controller, Post, UseGuards, Request, Get, Query, Param, Delete, Patch } from '@nestjs/common';
 import { AuthPostingService } from './auth-posting.service';
 import { AuthPosting } from '../entities/authPosting.entity'
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
@@ -16,6 +16,11 @@ export class AuthPostingController {
 		await this.a_pService.makePosting(postingInfo, await req.user);
 	}
 
+	@Get('postings/:id')
+	async getInfo(@Param('id') id: string)  {
+		return await this.a_pService.getInfo(id)
+	}
+
 	@Get('postings/:type/:index')
 	async getPostings(@Param('type') type: string, @Param('index') index: number): Promise<PostingInfo> {
 		const postingArr = await this.a_pService.getPostings(type, index);
@@ -30,4 +35,8 @@ export class AuthPostingController {
 	async deleteAll() {
 		await this.a_pService.deleteAll();
 	}
+
+
 }
+
+//

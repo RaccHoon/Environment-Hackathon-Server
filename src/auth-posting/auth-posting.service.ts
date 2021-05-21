@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Post } from '@nestjs/common';
 import { AuthPosting } from '../entities/authPosting.entity'
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
@@ -50,6 +50,38 @@ export class AuthPostingService {
 		else {
 			return null;
 		}
+	}
+
+	async getInfo(id: string) {
+		const posting = await this.postingRepository.findOne({postingId: id})
+		const writer = await this.userRepository.findOne({userClassification: posting.writerCode})
+		const postingInfo = {
+			questName: posting.questName,
+			writerName: posting.writerName,
+			writerPicture: writer.image,
+			postTitle: posting.postTitle,
+			picture: posting.picture,
+			pictureNum: posting.pictureNum,
+			postingContent: posting.postContent,
+			authNum: posting.authNum,
+			commentNum: posting.reviewNum,
+			commentedUsers: {
+				comment: [
+					{
+						name: "user1",
+						picture: "abcde",
+						comment: "hello world"
+					},
+					{
+						name: "user2",
+						picture: "abcdef",
+						comment: "hellooo world"
+					}
+				],
+				commentedUserNum: 2
+			}			
+		}
+		return await postingInfo;
 	}
 
 	async deleteAll() {

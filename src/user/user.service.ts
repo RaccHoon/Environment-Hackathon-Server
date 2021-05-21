@@ -56,6 +56,21 @@ export class UserService {
 			return "true"
 	}
 
+	async noSameName(name: string) {
+		const connection = getConnection()
+		const users: Array<User> = await connection
+			.createQueryBuilder()
+			.select("user.name")
+			.from(User, 'user')
+			.getMany()
+		
+		if(users.find((value)=>value.name === name))
+			return "false"
+
+		else
+			return "true"
+	}
+
 	async deleteAll() {
 		await this.userRepository.delete({})
 		await this.treeInfoRepository.delete({})

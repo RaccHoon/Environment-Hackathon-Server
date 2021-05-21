@@ -1,4 +1,4 @@
-import { Controller, Request, Post, UseGuards, Get, Delete } from '@nestjs/common';
+import { Controller, Request, Post, UseGuards, Get, Delete, Body } from '@nestjs/common';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 import { TreeService } from './tree.service'
 
@@ -11,6 +11,7 @@ export class TreeController {
 	@UseGuards(JwtAuthGuard)
 	@Get('breeding')
 	async userBreedingTree(@Request() req) {
-		await this.treeService.userBreedingTree(req.user);
+		console.log(await this.treeService.userBreedingTree(req.user))
+		return await this.treeService.userBreedingTree(req.user);
 	}
 }

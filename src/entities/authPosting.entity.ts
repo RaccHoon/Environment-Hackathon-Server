@@ -14,7 +14,7 @@ export class AuthPosting {
     @Column({type: "longtext"})
     postContent: string;
 
-    @Column({default: ""})
+    @Column({type: 'longtext'})
     picture: string;
 
 	@CreateDateColumn({type: "timestamp"})
@@ -26,14 +26,14 @@ export class AuthPosting {
     @Column()
     writerName: string;
 
-	@Column({default: 0})
-    authNum: number;
+	@Column({default: '0'})
+    authNum: string;
 
-	@Column({default: 0})
-    pictureNum: number;
+	@Column({default: '0'})
+    pictureNum: string;
 	
-	@Column({default: 0})
-    reviewNum: number;
+	@Column({default: '0'})
+    reviewNum: string;
 
     @Column({default: 'unAuth'})
     type: string;

@@ -19,10 +19,14 @@ export class UserController {
 		this.userService.deleteAll()
 	}
 
-	@Get('/:email')
+	@Get('validation/email/:email')
 	async noSameEmail(@Param('email') email: string): Promise<string> {
 		return this.userService.noSameEmail(email)
 	}
 
+	@Get('validation/name/:name')
+	async noSameName(@Param('name') name: string): Promise<string> {
+		return this.userService.noSameName(name)
+	}
 
 }

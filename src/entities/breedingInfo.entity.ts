@@ -11,6 +11,9 @@ export class BreedingInfo {
     @Column({default: ''})
     treeCode: string;
 
-	@Column({default: 0})
-    treeExp: number;
+	@Column({default: '0'})
+    treeExp: string;
+
+    @Column({default: '1'})
+    treeLevel: string;
 }

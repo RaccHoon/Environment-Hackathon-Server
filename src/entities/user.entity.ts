@@ -15,12 +15,15 @@ export class User {
     @Column()
     name: string;
 
+    @Column({"type": "longtext"})
+    image: string;
+
     @Column()
     location: string;
 
-    @Column({default: 0})
-    exp: number;
+    @Column({default: '0'})
+    exp: string;
 
-    @Column({default: 50})
-    token: number;
+    @Column({default: '50'})
+    token: string;
 }

@@ -9,9 +9,12 @@ import { EncryptionService } from '../encryption/encryption.service'
 import { Tree } from '../entities/trees.entity'
 import { TreeService } from '../tree/tree.service'
 import { BreedingInfo } from '../entities/breedingInfo.entity'
+import { AuthSupportPeople } from '../entities/authSupportPeople.entity'
+import { Picture } from '../entities/picture.entity'
+import { LoginTime } from '../entities/logInTime.entity'
 
 @Module({
-	imports: [TypeOrmModule.forFeature([AuthPosting, User, Tree, BreedingInfo])],
+	imports: [TypeOrmModule.forFeature([AuthPosting, User, Tree, BreedingInfo, AuthSupportPeople, Picture, LoginTime])],
     controllers: [AuthPostingController],
     providers: [AuthPostingService, UserService, EncryptionService, TreeService],
     exports: [AuthPostingService]

@@ -5,12 +5,12 @@ export class Tree {
     @PrimaryGeneratedColumn('uuid')
     tableId: string;
 
-    @Column()
+    @Column({default: ""})
     treeCode: string;
 
-    @Column()
+    @Column({default: ""})
     treeName: string;
 
-    @Column()
+    @Column({default: ""})
     userCode: string;
 }

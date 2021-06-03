@@ -20,6 +20,7 @@ export class AuthService {
   }
 
   async login(user: any) {
+    await this.usersService.checkOneDayPassed(user.eMail)
     const payload = { username: user.eMail, sub: user.userClassification };
     return {
       access_token: this.jwtService.sign(payload),

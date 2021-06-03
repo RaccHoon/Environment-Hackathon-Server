@@ -9,9 +9,14 @@ export class TreeController {
 	) {}
 
 	@UseGuards(JwtAuthGuard)
-	@Get('breeding')
+	@Get('/breeding')
 	async userBreedingTree(@Request() req) {
 		console.log(await this.treeService.userBreedingTree(req.user))
 		return await this.treeService.userBreedingTree(req.user);
+	}
+
+	@Delete('/deleteAll')
+	async deleteAll() {
+		this.treeService.deleteAll();
 	}
 }

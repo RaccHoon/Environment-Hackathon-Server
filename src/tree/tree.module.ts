@@ -7,9 +7,10 @@ import { BreedingInfo } from '../entities/breedingInfo.entity';
 import { UserService } from '../user/user.service'
 import { User } from 'src/entities/user.entity';
 import { EncryptionService } from '../encryption/encryption.service'
+import { LoginTime } from '../entities/logInTime.entity'
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Tree, BreedingInfo, User])],
+  imports: [TypeOrmModule.forFeature([Tree, BreedingInfo, User, LoginTime])],
   providers: [TreeService, UserService, EncryptionService],
   controllers: [TreeController],
   exports: [TreeService]

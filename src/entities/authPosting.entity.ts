@@ -5,7 +5,7 @@ export class AuthPosting {
     @PrimaryGeneratedColumn('uuid')
     postingId: string;
 
-    @Column()
+    @Column({default: ""})
     questName: string;
 
     @Column({default: ""})
@@ -13,9 +13,6 @@ export class AuthPosting {
 
     @Column({type: "longtext"})
     postContent: string;
-
-    @Column({type: 'longtext'})
-    picture: string;
 
 	@CreateDateColumn({type: "timestamp"})
     date: string;

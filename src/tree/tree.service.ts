@@ -65,4 +65,9 @@ export class TreeService {
 		}
 		return userNowBreeding
 	}
+
+	async deleteAll() {
+		this.treeRepository.delete({});
+		this.breedingInfoRepository.delete({});
+	}
 }

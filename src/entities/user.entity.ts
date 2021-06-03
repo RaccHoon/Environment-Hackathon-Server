@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn } from 'typeorm';
 import { ColumnMetadata } from 'typeorm/metadata/ColumnMetadata';
 
 @Entity()
@@ -18,6 +18,24 @@ export class User {
     @Column({"type": "longtext"})
     image: string;
 
+    @Column({default: 0})
+    firstQuest: number;
+
+    @Column({default: ""})
+    firstQuestPostingId: string;
+
+    @Column({default: 1})
+    secondQuest: number
+
+    @Column({default: ""})
+    secondQuestPostingId: string;
+
+    @Column({default: 2})
+    thirdQuest: number
+
+    @Column({default: ""})
+    thirdQuestPostingId: string;
+
     @Column()
     location: string;
 
@@ -26,4 +44,7 @@ export class User {
 
     @Column({default: '50'})
     token: string;
+
+    @Column({default: 'true'})
+    newCommer: string;
 }

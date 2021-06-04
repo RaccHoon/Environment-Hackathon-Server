@@ -155,14 +155,40 @@ export class UserService {
 		await this.treeInfoRepository.delete({})
 		await this.breedingInfoRepository.delete({})
 	}
+/*
+	async checkDust(items, user) {
+		const thisUser = await this.userRepository.findOne({userClassification: user})
+		let gradeSum = 0
+		let lacationNum = 0
+		for(let item of items) {
+			if(item.sidoName === thisUser.location){
+				gradeSum += Number(item.pm10Grade)
+				lacationNum++
+			}
+		}
+		if((gradeSum / lacationNum) < 2) {
+			return 'good'
+		}
+		else if((gradeSum / lacationNum) >= 2) {
+			return 'bad'
+		}
+	}*/
 
 	async setThreeQuests(user) {
 		const len = quests.length
 		let choosenNum = []
+		let impossibleNum = []
+		/*
+		if(await this.checkDust(items, user) == 'good')
+			impossibleNum.push(8)
+		else
+			impossibleNum.push(9)*/
 
 		while(choosenNum.length < 3) {
 			const num = Math.floor(Math.random()*len)
 			if(choosenNum.includes(num))
+				continue
+			if(impossibleNum.includes(num))
 				continue
 			else
 				choosenNum.push(num)
